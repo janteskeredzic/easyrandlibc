@@ -50,7 +50,14 @@ int main()
 			printf("%d ", (currChar >> y) & 1);
 		}
 	}
-
 	printf("\n");
+	
+	int* p_intarray = malloc(20 * sizeof(int));
+	er_fill_intarr(0, 200, p_intarray, 20);
+	for(int i = 0; i < 20; ++i)
+	{
+		printf("Ptr_array[%i]: %i\n", i, *(p_intarray+i));
+	}
+
 	return 0;
 }

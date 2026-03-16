@@ -127,30 +127,30 @@ char er_rand_byte(void)
 }
 
 
-int* er_rand_intparr(int min, int max, unsigned int arrsize)
+int* er_rand_intparr(int min, int max, size_t arrsize)
 {
 	int* t_arr = malloc(arrsize * sizeof(int));
-	for(unsigned int i = 0; i < arrsize; ++i)
+	for(size_t i = 0; i < arrsize; ++i)
 	{
 		*(t_arr+i) = er_rand_int(min, max); 
 	}
 	return t_arr;
 }
 
-unsigned int* er_rand_uintparr(unsigned int min, unsigned int max, unsigned int arrsize)
+unsigned int* er_rand_uintparr(unsigned int min, unsigned int max, size_t arrsize)
 {
 	unsigned int* t_arr = malloc(arrsize * sizeof(unsigned int));
-	for(unsigned int i = 0; i < arrsize; ++i)
+	for(size_t i = 0; i < arrsize; ++i)
 	{
 		*(t_arr+i) = er_rand_uint(min, max); 
 	}
 	return t_arr;
 }
 
-float* er_rand_floatparr(float min, float max, unsigned int arrsize)
+float* er_rand_floatparr(float min, float max, size_t arrsize)
 {
 	float* t_arr = malloc(arrsize * sizeof(float));
-	for(unsigned int i = 0; i < arrsize; ++i)
+	for(size_t i = 0; i < arrsize; ++i)
 	{
 		*(t_arr+i) = er_rand_float(min, max); 
 	}
@@ -158,20 +158,20 @@ float* er_rand_floatparr(float min, float max, unsigned int arrsize)
 }
 
 
-double* er_rand_doubleparr(double min, double max, unsigned int arrsize)
+double* er_rand_doubleparr(double min, double max, size_t arrsize)
 {
 	double* t_arr = malloc(arrsize * sizeof(double));
-	for(unsigned int i = 0; i < arrsize; ++i)
+	for(size_t i = 0; i < arrsize; ++i)
 	{
 		*(t_arr+i) = er_rand_double(min, max); 
 	}
 	return t_arr;
 }
 
-long double* er_rand_ldoubleparr(long double min, long double  max, unsigned int arrsize)
+long double* er_rand_ldoubleparr(long double min, long double  max, size_t arrsize)
 {
 	long double* t_arr = malloc(arrsize * sizeof(long double));
-	for(unsigned int i = 0; i < arrsize; ++i)
+	for(size_t i = 0; i < arrsize; ++i)
 	{
 		*(t_arr+i) = er_rand_ldouble(min, max); 
 	}
@@ -179,85 +179,85 @@ long double* er_rand_ldoubleparr(long double min, long double  max, unsigned int
 }
 
 
-int* er_rand_boolparr(unsigned int arrsize)
+int* er_rand_boolparr(size_t arrsize)
 {
 	int* t_arr = malloc(arrsize * sizeof(int));
-	for(unsigned int i = 0; i < arrsize; ++i)
+	for(size_t i = 0; i < arrsize; ++i)
 	{
 		*(t_arr+i) = er_rand_bool();
 	}
 	return t_arr;
 }
 
-char* er_rand_byteparr(unsigned int arrsize)
+char* er_rand_byteparr(size_t arrsize)
 {
 	char* t_arr = malloc(arrsize * sizeof(char));
-	for(unsigned int i = 0; i < arrsize; ++i)
+	for(size_t i = 0; i < arrsize; ++i)
 	{
 		*(t_arr+1) = er_rand_byte();
 	}
 	return t_arr;
 }
 
-void er_fill_intarr(int min, int max, int arr[], unsigned int size)
+void er_fill_intarr(int min, int max, int* arr, size_t size)
 {
 	if(size == 0) return;
-	for(unsigned int i = 0; i < size; ++i)
+	for(size_t i = 0; i < size; ++i)
 	{
-		arr[i] = er_rand_int(min, max);
+		*(arr+i) = er_rand_int(min, max);
 	}
 }
 
-void er_fill_uintarr(unsigned int min, unsigned int max, unsigned int arr[], unsigned int size)
+void er_fill_uintarr(unsigned int min, unsigned int max, unsigned int* arr, size_t size)
 {
 	if(size == 0) return;
-	for(unsigned int i = 0; i < size; ++i)
+	for(size_t i = 0; i < size; ++i)
 	{
-		arr[i] = er_rand_uint(min, max);
+		*(arr+i) = er_rand_uint(min, max);
 	}
 }
 
-void er_fill_floatarr(float min, float max, float arr[], unsigned int size)
+void er_fill_floatarr(float min, float max, float* arr, size_t size)
 {
 	if(size == 0) return;
-	for(unsigned int i = 0; i < size; ++i)
+	for(size_t i = 0; i < size; ++i)
 	{
-		arr[i] = er_rand_float(min, max);
+		*(arr+i) = er_rand_float(min, max);
 	}
 }
 
-void er_fill_doublearr(double min, double max, double arr[], unsigned int size)
+void er_fill_doublearr(double min, double max, double* arr, size_t size)
 {
 	if(size == 0) return;
-	for(unsigned int i = 0; i < size; ++i)
+	for(size_t i = 0; i < size; ++i)
 	{
-		arr[i] = er_rand_double(min, max);
+		*(arr+i) = er_rand_double(min, max);
 	}
 }
 
-void er_fill_ldoublearr(long double min, long double max, long double arr[], unsigned int size)
+void er_fill_ldoublearr(long double min, long double max, long double* arr, size_t size)
 {
 	if(size == 0) return;
-	for(unsigned int i = 0; i < size; ++i)
+	for(size_t i = 0; i < size; ++i)
 	{
-		arr[i] = er_rand_ldouble(min, max);
+		*(arr+i) = er_rand_ldouble(min, max);
 	}
 }
 
-void er_fill_boolarr(int arr[], unsigned int size)
+void er_fill_boolarr(int* arr, size_t size)
 {
 	if(size == 0) return;
-	for(unsigned int i = 0; i < size; ++i)
+	for(size_t i = 0; i < size; ++i)
 	{
-		arr[i] = er_rand_bool();
+		*(arr+i) = er_rand_bool();
 	}
 }
 
-void er_fill_bytearr(char arr[], unsigned int size)
+void er_fill_bytearr(char* arr, size_t size)
 {
 	if(size == 0) return;
-	for(unsigned int i = 0; i < size; ++i)
+	for(size_t i = 0; i < size; ++i)
 	{
-		arr[i] = er_rand_byte();
+		*(arr+i) = er_rand_byte();
 	}
 }

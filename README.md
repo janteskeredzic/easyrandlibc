@@ -79,11 +79,11 @@ int randomInt = er_rand_int(10, 60);
 ## If you do not assign a pointer to them, they will be lost.
 
 ```c
-er_rand_intparr(min, max, unsigned int arrsize); //Allocates an array on the heap and fills it with random values
-er_rand_uintparr(min, max, unsigned int arrsize)
-er_rand_floatparr(min, max, unsigned int arrsize)
-er_rand_doubleparr(min, max, unsigned int arrsize)
-er_rand_ldoubleparr(min, max, unsigned int arrsize)
+er_rand_intparr(min, max, size_t arrsize); //Allocates an array on the heap and fills it with random values
+er_rand_uintparr(min, max, size_t arrsize)
+er_rand_floatparr(min, max, size_t arrsize)
+er_rand_doubleparr(min, max, size_t arrsize)
+er_rand_ldoubleparr(min, max, size_t arrsize)
 er_rand_boolparr() // Generates an array of 0 and 1
 
 
@@ -93,19 +93,20 @@ free(intPointerArray);
 ```
 
 ## Filling arrays
-### For stack and global C arrays, does not allocate memory on the heap
-### Size can be smaller than array size, but can not be larger since it's a C-style static array.
+### For stack stack and pointer arrays, does not manipulate allocated memory
 ```c
-er_fill_intarr(min, max, arr[], unsigned int size); // Fills an int array with random values in the range
-er_fill_uintarr(min, max, arr[], unsigned int size);
-er_fill_floatarr(min, max, arr[], unsigned int size);
-er_fill_doublearr(min, max, arr[], unsigned int size);
-er_fill_ldoublearr(min, max, arr[], unsigned int size);
-er_fill_boolarr(arr[], unsigned int size); // Fills an int array with 0 or 1
+er_fill_intarr(min, max, int*  arr, size_t size); // Fills an int array with random values in the range
+er_fill_uintarr(min, max, unsigned int* arr, size_t size);
+er_fill_floatarr(min, max, float* arr, size_t size);
+er_fill_doublearr(min, max, double* arr, size_t size);
+er_fill_ldoublearr(min, max, long double* arr, size_t size);
+er_fill_boolarr(int* arr, size_t size); // Fills an int array with 0 or 1
 
 int intArray[50] = {0};
+float* p_floatArray = malloc(20 * sizeof(int));
 er_fill_intarr(10, 60, intArray, 50); //Fills entire array with random values
 er_fill_intarr(25, 225, intArray, 25); //Fills first 25 with random values
+er_fill_intarr(24.2f, 500.0f, p_floatArray, 20);
 
 ```
 

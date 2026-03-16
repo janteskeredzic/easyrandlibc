@@ -1,6 +1,6 @@
 #ifndef EASYRANDLIB_H
 #define EASYRANDLIB_H
-
+#include <stddef.h>
 
 void er_seed(unsigned int seed);
 void er_seed_auto(void);
@@ -15,23 +15,23 @@ char er_rand_byte(void);
 
 
 
-int* er_rand_intparr(int min, int max, unsigned int arrsize);
-unsigned int* err_rand_utintparr(unsigned int min, unsigned int max, unsigned int arrsize);
-float* err_rand_floatparr(float min, float max, unsigned int arrsize);
-double* err_rand_doubleparr(double min, double max, unsigned int arrsize);
-long double* er_rand_ldoubleparr(long double min, long double max, unsigned int arrsize);
-int* er_rand_boolparr(unsigned int arrsize);
-char* er_rand_byteparr(unsigned int arrsize);
+int* er_rand_intparr(int min, int max, size_t arrsize);
+unsigned int* err_rand_utintparr(unsigned int min, unsigned int max, size_t arrsize);
+float* err_rand_floatparr(float min, float max, size_t arrsize);
+double* err_rand_doubleparr(double min, double max, size_t arrsize);
+long double* er_rand_ldoubleparr(long double min, long double max, size_t arrsize);
+int* er_rand_boolparr(size_t arrsize);
+char* er_rand_byteparr(size_t arrsize);
 
 
 
-void er_fill_intarr(int min, int max, int arr[], unsigned int size);
-void er_fill_uintarr(unsigned int min, unsigned int max, unsigned int arr[], unsigned int size);
-void er_fill_floatarr(float min, float max, float arr[], unsigned int size);
-void er_fill_doublearr(double min, double max, double arr[], unsigned int size);
-void er_fill_ldoublearr(long double min, long double max, long double arr[], unsigned int size);
-void er_fill_boolarr(int arr[], unsigned int size);
-void er_fill_bytearr(char arr[], unsigned int size);
+void er_fill_intarr(int min, int max, int* arr, size_t size);
+void er_fill_uintarr(unsigned int min, unsigned int max, unsigned int* arr, size_t size);
+void er_fill_floatarr(float min, float max, float* arr, size_t size);
+void er_fill_doublearr(double min, double max, double* arr, size_t size);
+void er_fill_ldoublearr(long double min, long double max, long double* arr, size_t size);
+void er_fill_boolarr(int* arr, size_t size);
+void er_fill_bytearr(char* arr, size_t size);
 
 
 
