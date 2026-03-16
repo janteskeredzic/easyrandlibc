@@ -1,5 +1,6 @@
 # easyrandlibc
-A C/C++ wrapper library for randomizing values.
+easyrandlib is a library for C/C++ that makes streamlines generating random values, its obviously a very light library.
+Its easy to use and does not require the user to worry about edge cases, modulo operators or implicit seeding.
 
 ## BUILDING ON WINDOWS IS NOT SUPPORTED YET
 ### If you wish to use this library on windows for the time being you can place the header and source file directly inside of your project and include the header that way.
@@ -74,10 +75,10 @@ int randomInt = er_rand_int(10, 60);
 
 ```c
 er_rand_intparr(min, max, unsigned int arrsize); //Allocates an array on the heap and fills it with random values
-er_rand_uintparr(min, max)
-er_rand_floatparr(min, max)
-er_rand_doubleparr(min, max)
-er_rand_ldoubleparr(min, max)
+er_rand_uintparr(min, max, unsigned int arrsize)
+er_rand_floatparr(min, max, unsigned int arrsize)
+er_rand_doubleparr(min, max, unsigned int arrsize)
+er_rand_ldoubleparr(min, max, unsigned int arrsize)
 er_rand_boolparr() // Generates an array of 0 and 1
 
 
