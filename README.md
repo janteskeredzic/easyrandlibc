@@ -25,6 +25,11 @@ If you wish to build the example source file do:
 make example
 ```
 
+To remove build you can use:
+
+```bash
+make clean
+```
 
 ## IMPORTANT
 This library requires gcc to be built on linux.
