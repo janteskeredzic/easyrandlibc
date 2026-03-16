@@ -14,10 +14,43 @@ int main()
 
 	int arrSize = 20;
 	int* randIntArr = er_rand_intparr(5, 500, arrSize);
+
 	for(int i = 0; i < arrSize; ++i)
 	{
 		printf("Array[%i]: %i\n", i, *(randIntArr+i));
 	}
+	
+	int stackarray[15] = {0};
+	er_fill_intarr(0, 5000, stackarray, 15);
+	for(int i = 0; i < 15; ++i)
+	{
+		printf("Stack array[%i]: %i\n", i, stackarray[i]); 
+	}
 
+	char randomByte = er_rand_byte();
+	printf("Random byte:[%c]\n", randomByte);
+	for(int i = 7; i >= 0; --i)
+	{
+		printf("%d ", (randomByte >> i) & 1); 
+	}
+	printf("\n");
+	char byteArr[20] = {0};
+	er_fill_bytearr(byteArr, 20);
+	for(int i = 0; i < 20; ++i)
+	{
+		printf("%c", byteArr[i]);
+	}
+	printf("\n");
+
+	for(int i = 0; i < 20; ++i)
+	{
+		char currChar = byteArr[i];
+		for(int y = 7; y >= 0; --y)
+		{
+			printf("%d ", (currChar >> y) & 1);
+		}
+	}
+
+	printf("\n");
 	return 0;
 }
