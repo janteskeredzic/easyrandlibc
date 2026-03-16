@@ -39,6 +39,12 @@ er_seed_auto();
 ```
 
 ### function which will automatically init the seed.
+### Or input the seed manually:
+
+```c
+er_seed(unsigned int seed);
+```
+
 
 ## GENERATING SINGLE VALUES IN RANGE
 
