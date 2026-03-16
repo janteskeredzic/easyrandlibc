@@ -87,7 +87,7 @@ free(intPointerArray);
 ```
 
 ## Filling arrays
-## For stack and global C arrays, does not allocate memory on the heap
+### For stack and global C arrays, does not allocate memory on the heap
 ### Size can be smaller than array size, but can not be larger since it's a C-style static array.
 ```c
 er_fill_intarr(min, max, arr[], unsigned int size); // Fills an int array with random values in the range
