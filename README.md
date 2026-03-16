@@ -1,5 +1,5 @@
 # easyrandlibc
-easyrandlib is a library for C/C++ that makes streamlines generating random values, its obviously a very light library.
+easyrandlib is a library for C/C++ that streamlines generating random values, its obviously a very light library.
 Its easy to use and does not require the user to worry about edge cases, modulo operators or implicit seeding.
 
 ## BUILDING ON WINDOWS IS NOT SUPPORTED YET
@@ -27,7 +27,7 @@ make example
 
 
 ## IMPORTANT
-This library requires gcc to be built.
+This library requires gcc to be built on linux.
 
 ```bash
 sudo apt install gcc
