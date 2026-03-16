@@ -1,7 +1,10 @@
 # easyrandlibc
 A C/C++ wrapper library for randomizing values.
 
-## USAGE
+## BUILDING ON WINDOWS IS NOT SUPPORTED YET
+### If you wish to use this library on windows for the time being you can place the header and source file directly inside of your project and include the header that way.
+
+## BUILD LINUX
 
 To build easyrandlib for C/C++ in linux make sure you have make installed:
 
@@ -35,7 +38,7 @@ sudo apt install gcc
 ### Before using any functions you must init the seed, for simplicity purposes you can run the
 
 ```c
-er_seed_auto();
+er_seed_auto(); //Automatically seeds based on time
 ```
 
 ### function which will automatically init the seed.
@@ -43,28 +46,82 @@ er_seed_auto();
 
 ```c
 er_seed(unsigned int seed);
-```
 
+er_seed(42);
+er_seed(67);
+er_seed(69);
+er_seed(420);
+er_seed(1337);
+
+```
 
 ## GENERATING SINGLE VALUES IN RANGE
 
 ```c
-er_rand_int(min, max); //Generates an int value between min and max inclusive
-er_rand_uint(min, max); //Generates an uint value between min and max inclusive
-er_rand_float(min, max); //Generates a float value between min and max inclusive
-er_rand_double(min, max); //Generates a double....
-er_rand_ldouble(min, max); //Generates a long double....
-er_rand_bool(); //Generates a bool (0 or 1)
+er_rand_int(min, max); //Returns a random int value between min and max inclusive
+er_rand_uint(min, max); //Returns a random uint value between min and max inclusive
+er_rand_float(min, max); //Returns a random float value between min and max inclusive
+er_rand_double(min, max); //Returns a random double....
+er_rand_ldouble(min, max); //Returns a radnom long double....
+er_rand_bool(); //Returns either 0 or 1
+
+
+int randomInt = er_rand_int(10, 60);
+
 ```
 ## Arrays can also be generated, but pay attention that they allocate memory on the heap,
 ## If you do not assign a pointer to them, they will be lost.
 
 ```c
 er_rand_intparr(min, max, unsigned int arrsize); //Allocates an array on the heap and fills it with random values
-er_rand_uintparr(...)
-er_rand_floatparr(...)
-er_rand_doubleparr(...)
-er_rand_ldoubleparr(...)
-er_rand_boolparr(...) // Generates an array of 0 and 1
+er_rand_uintparr(min, max)
+er_rand_floatparr(min, max)
+er_rand_doubleparr(min, max)
+er_rand_ldoubleparr(min, max)
+er_rand_boolparr() // Generates an array of 0 and 1
+
+
+int* intPointerArray = er_rand_intparr(10, 60, 25);
+free(intPointerArray);
+
 ```
+
+## Filling arrays
+## For stack and global C arrays, does not allocate memory on the heap
+### Size can be smaller than array size, but can not be larger since it's a C-style static array.
+```c
+er_fill_intarr(min, max, arr[], unsigned int size); // Fills an int array with random values in the range
+er_fill_uintarr(min, max, arr[], unsigned int size);
+er_fill_floatarr(min, max, arr[], unsigned int size);
+er_fill_doublearr(min, max, arr[], unsigned int size);
+er_fill_ldoublearr(min, max, arr[], unsigned int size);
+er_fill_boolarr(arr[], unsigned int size); // Fills an int array with 0 or 1
+
+int intArray[50] = {0};
+er_fill_intarr(10, 60, intArray, 50); //Fills entire array with random values
+er_fill_intarr(25, 225, intArray, 25); //Fills first 25 with random values
+
+```
+
+# BYTE GENERATION
+## easyrandlib can also generate random bytes
+
+```c
+char randomByte = er_rand_byte(); // Returns a random byte as char 
+```
+
+## Random byte arrays can also be generated (heap)
+
+```c
+char* randomBytePointerArray = er_rand_byteparr(50); //Returns a pointer of 50 random bytes
+```
+
+## Also works for static array filling
+
+```c
+char byteArray[50] = {0};
+er_fill_bytearr(byteArray, 50);
+```
+
+
 
