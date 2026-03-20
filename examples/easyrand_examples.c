@@ -58,6 +58,13 @@ int main()
 	{
 		printf("Ptr_array[%i]: %i\n", i, *(p_intarray+i));
 	}
+	
+	char randChar = er_rand_char();
+	char randUpper = er_rand_charr(ASCII_UPPER);
+	char randLower = er_rand_charr(ASCII_LOWER);
+	char randPrintable = er_rand_charr(ASCII_PRINTABLE);
+	char randFull = er_rand_charr(ASCII_FULL);
 
+	printf("Rand char: %c\nRand upper: %c\nRand lower: %c\nRand printable: %c\nRand full: %c\n", randChar, randUpper, randLower, randPrintable, randFull);
 	return 0;
 }

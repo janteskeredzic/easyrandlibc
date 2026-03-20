@@ -126,6 +126,37 @@ char er_rand_byte(void)
 
 }
 
+char er_rand_char(void)
+{
+	return er_rand_uint(32, 126);
+}
+
+char er_rand_charr(unsigned int CHAR_SET)
+{
+	switch(CHAR_SET)
+	{
+	case 1:
+		return er_rand_uint(97, 122);
+	break;
+	case 2:
+		return er_rand_uint(65, 90);
+	break;
+	case 3:
+		return er_rand_uint(65, 122);
+	break;
+	case 4:
+		return er_rand_uint(32, 126);
+	break;
+	case 5:
+		return er_rand_uint(0, 127);
+	break;
+	default:
+		return er_rand_uint(0, 127);
+	break;
+	}
+	return 0;
+}
+
 
 int* er_rand_intparr(int min, int max, size_t arrsize)
 {
@@ -199,6 +230,26 @@ char* er_rand_byteparr(size_t arrsize)
 	return t_arr;
 }
 
+char* er_rand_charparr(size_t arrsize)
+{
+	char* t_arr = malloc(arrsize * sizeof(char));
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(t_arr+1) = er_rand_char();
+	}
+	return t_arr;
+}
+
+char* er_rand_charrparr(unsigned int CHAR_SET, size_t arrsize)
+{
+	char* t_arr = malloc(arrsize * sizeof(char));
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(t_arr+1) = er_rand_charr(CHAR_SET);
+	}
+	return t_arr;
+}
+
 void er_fill_intarr(int min, int max, int* arr, size_t size)
 {
 	if(size == 0) return;
@@ -259,5 +310,23 @@ void er_fill_bytearr(char* arr, size_t size)
 	for(size_t i = 0; i < size; ++i)
 	{
 		*(arr+i) = er_rand_byte();
+	}
+}
+
+void er_fill_chararr(char* arr, size_t size)
+{
+	if(size == 0) return;
+	for(size_t i = 0; i < size; ++i)
+	{
+		*(arr+i) = er_rand_char();
+	}
+}
+
+void er_fill_charrarr(unsigned int CHAR_SET, char* arr, size_t size)
+{
+	if(size == 0) return;
+	for(size_t i = 0; i < size; ++i)
+	{
+		*(arr+i) = er_rand_charr(CHAR_SET);
 	}
 }
