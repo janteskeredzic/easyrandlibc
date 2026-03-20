@@ -70,7 +70,8 @@ er_rand_float(min, max); //Returns a random float value between min and max incl
 er_rand_double(min, max); //Returns a random double....
 er_rand_ldouble(min, max); //Returns a radnom long double....
 er_rand_bool(); //Returns either 0 or 1
-
+er_rand_char(); //Returns a random ASCII char -> look down below for the er_rand_charr(CHAR_SET) func
+er_rand_charr(unsigned int CHAR_SET); 
 
 int randomInt = er_rand_int(10, 60);
 
@@ -84,8 +85,9 @@ er_rand_uintparr(min, max, size_t arrsize)
 er_rand_floatparr(min, max, size_t arrsize)
 er_rand_doubleparr(min, max, size_t arrsize)
 er_rand_ldoubleparr(min, max, size_t arrsize)
-er_rand_boolparr() // Generates an array of 0 and 1
-
+er_rand_boolparr(size_t arrsize) // Generates an array of 0 and 1
+er_rand_charparr(size_t arrsize);
+er_rand_charrparr(unsigned int CHAR_SET, size_t arrsize);
 
 int* intPointerArray = er_rand_intparr(10, 60, 25);
 free(intPointerArray);
@@ -101,6 +103,9 @@ er_fill_floatarr(min, max, float* arr, size_t size);
 er_fill_doublearr(min, max, double* arr, size_t size);
 er_fill_ldoublearr(min, max, long double* arr, size_t size);
 er_fill_boolarr(int* arr, size_t size); // Fills an int array with 0 or 1
+er_fill_bytearr(char* arr, size_t size);
+er_fill_chararr(char* arr, size_t size);
+er_fill_charrarr(unsigned int CHAR_SET, char* arr, size_t size);
 
 int intArray[50] = {0};
 float* p_floatArray = malloc(20 * sizeof(int));
@@ -130,5 +135,15 @@ char byteArray[50] = {0};
 er_fill_bytearr(byteArray, 50);
 ```
 
-
+# MACROS
+### Currently easyrandlib supports macros for random chars (ASCII)
+### NOTE THAT USING THE 'er_rand_char' function does not take params, it will always generate a random printable char.
+The 'er_rand_charr' takes a param in the form of macros below:
+```c
+ASCII_LOWER
+ASCII_UPPER
+ASCII_LETTERS
+ASCII_PRINTABLE
+ASCII_FULL
+```
 
