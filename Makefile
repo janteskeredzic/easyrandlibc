@@ -24,7 +24,7 @@ obj:
 
 
 example: $(LIB) examples/easyrand_examples.c
-	$(CC) $(CFLAGS) examples/easyrand_examples.c -L. -l:easyrandlib.a -o examples/test
+	$(CC) $(CFLAGS) -Wno-unused-function examples/easyrand_examples.c -L. -l:easyrandlib.a -o examples/test
 
 clean:
 	rm -rf obj $(LIB) examples/test

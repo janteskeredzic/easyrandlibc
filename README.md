@@ -1,6 +1,6 @@
 # easyrandlibc
 easyrandlib is a library for C/C++ that streamlines generating random values, its obviously a very light library.
-Its easy to use and does not require the user to worry about edge cases, modulo operators or implicit seeding.
+Its easy to use and does not require the user to worry about edge cases, modulo operators or seeding.
 
 ## BUILDING ON WINDOWS IS NOT SUPPORTED YET
 ### If you wish to use this library on windows for the time being you can place the header and source file directly inside of your project and include the header that way.
@@ -76,6 +76,21 @@ er_rand_charr(unsigned int CHAR_SET);
 int randomInt = er_rand_int(10, 60);
 
 ```
+## FIXED SIZE TYPES
+easyrandlib supports generation for signed and unsigned fixed size integer types: 8, 16, 32 and 64 bit.
+
+```c
+er_rand_int8(int8_t min, int8_t max);
+er_rand_int16(int16_t min, int16_t max);
+er_rand_int32(int32_t min, int32_t max);
+er_rand_int64(int64_t min, int64_t max);
+
+er_rand_uint8(uint8_t min, uint8_t max);
+er_rand_uint16(uint16_t min, uint16_t max);
+er_rand_uint32(uint32_t min, uint32_t max);
+er_rand_uint64(uint64_t min, uint64_t max);
+```
+
 ## Arrays can also be generated, but pay attention that they allocate memory on the heap,
 ## If you do not assign a pointer to them, they will be lost.
 

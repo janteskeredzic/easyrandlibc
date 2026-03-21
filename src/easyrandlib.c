@@ -51,6 +51,305 @@ unsigned int er_rand_uint(unsigned int min, unsigned int max)
 		max = min;
 		min = temp;
 	}
+	unsigned int range = max - min + 1U;
+	unsigned int limit = (RAND_MAX / range) * range;
+	unsigned int r;
+
+	do{
+		r = (uint32_t)rand();
+	}while(r >= limit);
+	return min + (r % range);
+}
+
+long er_rand_long(long min, long max)
+{
+	if(min==max)
+	{
+		return min;
+	}
+	if( min > max )
+	{
+		unsigned long temp = max;
+		max = min;
+		min = temp;
+	}
+	unsigned long range = max - min + 1U;
+	unsigned long limit = (RAND_MAX / range) * range;
+	unsigned long r;
+
+	do{
+		r = (unsigned long)rand();
+	}while(r >= limit);
+	return min + (r % range);
+}
+
+
+unsigned long er_rand_ulong(unsigned long min, unsigned long max)
+{
+	if(min==max)
+	{
+		return min;
+	}
+	if( min > max )
+	{
+		unsigned long temp = max;
+		max = min;
+		min = temp;
+	}
+	unsigned long range = max - min + 1U;
+	unsigned long limit = (RAND_MAX / range) * range;
+	unsigned long r;
+
+	do{
+		r = (unsigned long)rand();
+	}while(r >= limit);
+	return min + (r % range);
+
+}
+
+unsigned long int er_rand_ulongint(unsigned long int min, unsigned long int max)
+{
+	if(min==max)
+	{
+		return min;
+	}
+	if( min > max )
+	{
+		unsigned long int temp = max;
+		max = min;
+		min = temp;
+	}
+	unsigned long int range = max - min + 1U;
+	unsigned long int limit = (RAND_MAX / range) * range;
+	unsigned long int r;
+
+	do{
+		r = (unsigned long int)rand();
+	}while(r >= limit);
+	return min + (r % range);
+
+}
+
+unsigned long long er_rand_ulonglong(unsigned long long min, unsigned long long max)
+{
+	if(min==max)
+	{
+		return min;
+	}
+	if( min > max )
+	{
+		unsigned long long temp = max;
+		max = min;
+		min = temp;
+	}
+	unsigned long long range = max - min + 1U;
+	unsigned long long limit = (RAND_MAX / range) * range;
+	unsigned long long r;
+
+	do{
+		r = (unsigned long long)rand();
+	}while(r >= limit);
+	return min + (r % range);
+
+}
+
+long int er_rand_longint(long int min, long int max)
+{
+	if(min==max)
+	{
+		return min;
+	}
+	if( min > max )
+	{
+		long int temp = max;
+		max = min;
+		min = temp;
+	}
+	long int range = max - min + 1U;
+	long int limit = (RAND_MAX / range) * range;
+	long int r;
+
+	do{
+		r = (long int)rand();
+	}while(r >= limit);
+	return min + (r % range);
+
+}
+
+long long er_rand_longlong(long long min, long long max)
+{
+	if(min==max)
+	{
+		return min;
+	}
+	if( min > max )
+	{
+		long long temp = max;
+		max = min;
+		min = temp;
+	}
+	long long range = max - min + 1U;
+	long long limit = (RAND_MAX / range) * range;
+	long long r;
+
+	do{
+		r = (long long)rand();
+	}while(r >= limit);
+	return min + (r % range);
+
+}
+
+//FIXED SIZE TYPE FUNCTIONS
+int8_t er_rand_int8(int8_t min, int8_t max)
+{
+	if(min==max)
+	{
+		return min;
+	}
+	if( min > max )
+	{
+		int8_t temp = max;
+		max = min;
+		min = temp;
+	}
+	int8_t range = max - min + 1U;
+	int8_t limit = (RAND_MAX / range) * range;
+	int8_t r;
+
+	do{
+		r = (int8_t)rand();
+	}while(r >= limit);
+	return min + (r % range);
+
+}
+
+int16_t er_rand_int16(int16_t min, int16_t max)
+{
+	if(min==max)
+	{
+		return min;
+	}
+	if( min > max )
+	{
+		int16_t temp = max;
+		max = min;
+		min = temp;
+	}
+	int16_t range = max - min + 1U;
+	int16_t limit = (RAND_MAX / range) * range;
+	int16_t r;
+
+	do{
+		r = (int16_t)rand();
+	}while(r >= limit);
+	return min + (r % range);
+
+}
+
+int32_t er_rand_int32(int32_t min, int32_t max)
+{
+	if(min==max)
+	{
+		return min;
+	}
+	if( min > max )
+	{
+		int32_t temp = max;
+		max = min;
+		min = temp;
+	}
+	int32_t range = max - min + 1U;
+	int32_t limit = (RAND_MAX / range) * range;
+	int32_t r;
+
+	do{
+		r = (int32_t)rand();
+	}while(r >= limit);
+	return min + (r % range);
+
+}
+
+int64_t er_rand_int64(int64_t min, int64_t max)
+{
+	if(min==max)
+	{
+		return min;
+	}
+	if( min > max )
+	{
+		int64_t temp = max;
+		max = min;
+		min = temp;
+	}
+	int64_t range = max - min + 1U;
+	int64_t limit = (RAND_MAX / range) * range;
+	int64_t r;
+
+	do{
+		r = (int64_t)rand();
+	}while(r >= limit);
+	return min + (r % range);
+
+}
+
+uint8_t er_rand_uint8(uint8_t min, uint8_t max)
+{
+	if(min==max)
+	{
+		return min;
+	}
+	if( min > max )
+	{
+		uint8_t temp = max;
+		max = min;
+		min = temp;
+	}
+	uint8_t range = max - min + 1U;
+	uint8_t limit = (RAND_MAX / range) * range;
+	uint8_t r;
+
+	do{
+		r = (uint8_t)rand();
+	}while(r >= limit);
+	return min + (r % range);
+
+}
+
+uint16_t er_rand_uint16(uint16_t min, uint16_t max)
+{
+	if(min==max)
+	{
+		return min;
+	}
+	if( min > max )
+	{
+		uint16_t temp = max;
+		max = min;
+		min = temp;
+	}
+	uint16_t range = max - min + 1U;
+	uint16_t limit = (RAND_MAX / range) * range;
+	uint16_t r;
+
+	do{
+		r = (uint16_t)rand();
+	}while(r >= limit);
+	return min + (r % range);
+
+}
+
+uint32_t er_rand_uint32(uint32_t min, uint32_t max)
+{
+	if(min==max)
+	{
+		return min;
+	}
+	if( min > max )
+	{
+		uint32_t temp = max;
+		max = min;
+		min = temp;
+	}
 	uint32_t range = max - min + 1U;
 	uint32_t limit = (RAND_MAX / range) * range;
 	uint32_t r;
@@ -59,7 +358,36 @@ unsigned int er_rand_uint(unsigned int min, unsigned int max)
 		r = (uint32_t)rand();
 	}while(r >= limit);
 	return min + (r % range);
+
 }
+
+uint64_t er_rand_uint64(uint64_t min, uint64_t max)
+{
+	if(min==max)
+	{
+		return min;
+	}
+	if( min > max )
+	{
+		uint64_t temp = max;
+		max = min;
+		min = temp;
+	}
+	uint64_t range = max - min + 1U;
+	uint64_t limit = (RAND_MAX / range) * range;
+	uint64_t r;
+
+	do{
+		r = (uint64_t)rand();
+	}while(r >= limit);
+	return min + (r % range);
+
+}
+
+
+//----------------
+
+
 
 float er_rand_float(float min, float max)
 {
