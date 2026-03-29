@@ -95,7 +95,7 @@ er_rand_uint64(uint64_t min, uint64_t max);
 int8_t* = er_rand_int8parr(min, max, 64);
 
 int32_t fixedIntArr[64] = {0};
-er_fill_int8arr(min, max, fixedIntArr, 64);
+er_fill_int32arr(min, max, fixedIntArr, 64);
 ```
 
 ## Arrays can also be generated, but pay attention that they allocate memory on the heap,
