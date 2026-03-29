@@ -488,6 +488,7 @@ char er_rand_charr(unsigned int CHAR_SET)
 
 int* er_rand_intparr(int min, int max, size_t arrsize)
 {
+	if(arrsize) return NULL;
 	int* t_arr = malloc(arrsize * sizeof(int));
 	for(size_t i = 0; i < arrsize; ++i)
 	{
@@ -658,3 +659,168 @@ void er_fill_charrarr(unsigned int CHAR_SET, char* arr, size_t size)
 		*(arr+i) = er_rand_charr(CHAR_SET);
 	}
 }
+
+
+//FIXED SIZE TYPE ARRAY FUNCTIONS
+
+int8_t* er_rand_int8parr(int8_t min, int8_t max, size_t arrsize)
+{
+	if(arrsize == 0) return NULL;
+	int8_t* t_c = malloc(arrsize * sizeof(int8_t));
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(t_c+i) = er_rand_int8(min, max);
+	}
+	return t_c;
+} 
+
+int16_t* er_rand_int16parr(int16_t min, int16_t max, size_t arrsize)
+{
+	if(arrsize == 0) return NULL;
+	int16_t* t_c = malloc(arrsize * sizeof(int16_t));
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(t_c+i) = er_rand_int16(min, max);
+	}
+	return t_c;
+}
+
+int32_t* er_rand_int32parr(int32_t min, int32_t max, size_t arrsize)
+{
+	if(arrsize == 0) return NULL;
+	int32_t* t_c = malloc(arrsize * sizeof(int32_t));
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(t_c+i) = er_rand_int32(min, max);
+	}
+	return t_c;
+}
+
+int64_t* er_rand_int64parr(int64_t min, int64_t max, size_t arrsize)
+{
+	if(arrsize == 0) return NULL;
+	int64_t* t_c = malloc(arrsize * sizeof(int64_t));
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(t_c+i) = er_rand_int64(min, max);
+	}
+	return t_c;
+}
+
+uint8_t* er_rand_uint8parr(uint8_t min, uint8_t max, size_t arrsize)
+{
+	if(arrsize == 0) return NULL;
+	uint8_t* t_c = malloc(arrsize * sizeof(uint8_t));
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(t_c+i) = er_rand_uint8(min, max);
+	}
+	return t_c;
+}
+
+
+uint16_t* er_rand_uint16parr(uint16_t min, uint16_t max, size_t arrsize)
+{
+	if(arrsize == 0) return NULL;
+	uint16_t* t_c = malloc(arrsize * sizeof(uint16_t));
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(t_c+i) = er_rand_uint16(min, max);
+	}
+	return t_c;
+}
+
+uint32_t* er_rand_uint32parr(uint32_t min, uint32_t max, size_t arrsize)
+{
+	if(arrsize == 0) return NULL;
+	uint32_t* t_c = malloc(arrsize * sizeof(uint32_t));
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(t_c+i) = er_rand_uint32(min, max);
+	}
+	return t_c;
+}
+
+uint64_t* er_rand_uint64parr(uint64_t min, uint64_t max, size_t arrsize)
+{
+	if(arrsize == 0) return NULL;
+	uint64_t* t_c = malloc(arrsize * sizeof(uint64_t));
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(t_c+i) = er_rand_uint64(min, max);
+	}
+	return t_c;
+}
+
+void er_fill_int8arr(int8_t min, int8_t  max, int8_t* arr, size_t arrsize)
+{
+	if(arrsize == 0) return;
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(arr+i) = er_rand_int8(min, max);
+	}
+}
+
+void er_fill_int16arr(int16_t min, int16_t  max, int16_t* arr, size_t arrsize)
+{
+	if(arrsize == 0) return;
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(arr+i) = er_rand_int16(min, max);
+	}
+}
+
+void er_fill_int32arr(int32_t min, int32_t max, int32_t* arr, size_t arrsize)
+{
+	if(arrsize == 0) return;
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(arr+i) = er_rand_int32(min, max);
+	}
+}
+
+void er_fill_int64arr(int64_t min, int64_t  max, int64_t* arr, size_t arrsize)
+{
+	if(arrsize == 0) return;
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(arr+i) = er_rand_int64(min, max);
+	}
+}
+
+void er_fill_uint8arr(uint8_t min, uint8_t  max, uint8_t* arr, size_t arrsize)
+{
+	if(arrsize == 0) return;
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(arr+i) = er_rand_uint8(min, max);
+	}
+}
+
+void er_fill_uint16arr(uint16_t min, uint16_t  max, uint16_t* arr, size_t arrsize)
+{
+	if(arrsize == 0) return;
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(arr+i) = er_rand_uint16(min, max);
+	}
+}
+
+void er_fill_uint32arr(uint32_t min, uint32_t  max, uint32_t* arr, size_t arrsize)
+{
+	if(arrsize == 0) return;
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(arr+i) = er_rand_uint32(min, max);
+	}
+}
+
+void er_fill_uint64arr(uint64_t min, uint64_t  max, uint64_t* arr, size_t arrsize)
+{
+	if(arrsize == 0) return;
+	for(size_t i = 0; i < arrsize; ++i)
+	{
+		*(arr+i) = er_rand_uint64(min, max);
+	}
+}
+//-------------------

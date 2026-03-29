@@ -90,6 +90,13 @@ er_rand_uint16(uint16_t min, uint16_t max);
 er_rand_uint32(uint32_t min, uint32_t max);
 er_rand_uint64(uint64_t min, uint64_t max);
 ```
+### Also supports generating and filling arrays for all types
+```c
+int8_t* = er_rand_int8parr(min, max, 64);
+
+int32_t fixedIntArr[64] = {0};
+er_fill_int8arr(min, max, fixedIntArr, 64);
+```
 
 ## Arrays can also be generated, but pay attention that they allocate memory on the heap,
 ## If you do not assign a pointer to them, they will be lost.

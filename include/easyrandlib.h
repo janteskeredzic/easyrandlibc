@@ -46,6 +46,24 @@ uint64_t er_rand_uint64(uint64_t min, uint64_t max);
 
 
 
+int8_t* er_rand_int8parr(int8_t min, int8_t max, size_t arrsize);
+int16_t* er_rand_int16parr(int16_t min, int16_t max, size_t arrsize);
+int32_t* er_rand_int32parr(int32_t min, int32_t max, size_t arrsize);
+int64_t* er_rand_int64parr(int64_t min, int64_t max, size_t arrsize);
+
+uint8_t* er_rand_uint8parr(uint8_t min, uint8_t max, size_t arrsize);
+uint16_t* er_rand_uint16parr(uint16_t min, uint16_t max, size_t arrsize);
+uint32_t* er_rand_uint32parr(uint32_t min, uint32_t max, size_t arrsize);
+uint64_t* er_rand_uint64parr(uint64_t min, uint64_t max, size_t arrsize);
+
+void er_fill_int8arr(int8_t min, int8_t max, int8_t* arr, size_t arrsize);
+void er_fill_int16arr(int16_t min, int16_t max, int16_t* arr, size_t arrsize);
+void er_fill_int32arr(int32_t min, int32_t max, int32_t* arr, size_t arrsize);
+void er_fill_int64arr(int64_t min, int64_t max, int64_t* arr, size_t arrsize);
+void er_fill_uint8arr(uint8_t min, uint8_t max, uint8_t* arr, size_t arrsize);
+void er_fill_uint16arr(uint16_t min, uint16_t max, uint16_t* arr, size_t arrsize);
+void er_fill_uint32arr(uint32_t min, uint32_t max, uint32_t* arr, size_t arrsize);
+void er_fill_uint64arr(uint64_t min, uint64_t max, uint64_t* arr, size_t arrsize);
 //---------------
 
 int* er_rand_intparr(int min, int max, size_t arrsize);
